@@ -20,6 +20,9 @@ class Player:
         self.skill = skill
         self.height = height
         self.playerRating = skill * skillWeight + height * heightWeight
+    
+    def __lt__(self, other):
+        return self.id < other.id
 
 class Team:
     def __init__(self, players, averageRating):

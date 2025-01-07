@@ -21,3 +21,11 @@ There are a couple parameters that we're trying to optimize for:
 2. Creating teams as fair as possible
 
 The closer teams are to the overall average the more "fair" the teams are
+
+
+
+FOR KIRK
+
+https://pynative.com/python-weighted-random-choices-with-probability/
+
+https://pynative.com/python-weighted-random-choices-with-probability/
