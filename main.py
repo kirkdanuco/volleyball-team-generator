@@ -3,18 +3,33 @@ import csv
 import __init__ as init
 import random
 import numpy as np
+from concurrent.futures import ThreadPoolExecutor # eventually optimize with the threader
+
+# ~~~~ TO DO~~~~ #
+# Turn into a function
+# create interative teams
+
+
+# testing branch
 
 # restrict forbidden pairings
 
+
+# ~~~~ TO DO~~~~ #
+
+
+
+
+
 # generate array of players
 players = init.extractPlayers()
-
-# print teams and averages
 
 
 # teams = []
 # for i in range (0,11):
 
+
+# create a 
 
 # choose 4 random players
 TeamsArray = []
@@ -45,14 +60,8 @@ teamSampleAvg = teamSampleAvg/len(teamSample2)
 TeamsArray.append(init.Team(2, teamSample2, teamSampleAvg))
 
 
-# debugging
+# Printing Team Details
 for team in TeamsArray:
     print(vars(team))
     for player in team.players:
         print("Team #"+ str(team.teamId) + ": " + str(vars(player)))
-
-# for players in teamSample1:
-#     print (vars(players))
-
-# print(len(teamSample1))
-# print(len(teamSample2))

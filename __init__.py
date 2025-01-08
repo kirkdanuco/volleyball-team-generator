@@ -4,7 +4,7 @@ import csv
 #initialization variables
 skillWeight = 0.75
 heightWeight = 1 - skillWeight
-teamSize = 4
+teamSize = 7
 
 
 cwd = os.path.dirname(os.path.abspath(__file__))
