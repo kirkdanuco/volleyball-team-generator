@@ -2,18 +2,13 @@ import os
 import csv
 import __init__ as init
 import random
-# import numpy as np
+import numpy as np
 
 # restrict forbidden pairings
 
 # generate array of players
 players = init.extractPlayers()
 
-
-
-
-
-# calculate the average 
 # print teams and averages
 
 
@@ -22,54 +17,42 @@ players = init.extractPlayers()
 
 
 # choose 4 random players
-teamSample = []
-teamSample = random.sample(players, init.teamSize) # choosing 4 random players
+TeamsArray = []
+teamSample1 = []
+teamSampleAvg = 0
+teamSample1 = random.sample(players, init.teamSize) # choosing X random players
 
+for samplePlayer in teamSample1:
+    teamSampleAvg = teamSampleAvg + samplePlayer.playerRating
+
+teamSampleAvg = teamSampleAvg/len(teamSample1)
+
+TeamsArray.append(init.Team(1, teamSample1, teamSampleAvg))
 
 # remove them from the list of players to randomly choose from
 remainingPlayers = init.extractPlayers()
-
-remainingPlayerCount = 0
-
-
-for remainingPlayer in remainingPlayers:
-    teamSamplePlayerCount = 0
-    for teamSamplePlayer in teamSample:
-        try:
-            if remainingPlayers[remainingPlayerCount].id == teamSample[teamSamplePlayerCount].id:
-                print(remainingPlayers[remainingPlayerCount].name + " " + teamSample[teamSamplePlayerCount].name)
-                print(remainingPlayers[remainingPlayerCount].id == teamSample[teamSamplePlayerCount].id)
-
-                remainingPlayers.pop(remainingPlayerCount)
-        except:
-            print("whoops " + str(remainingPlayerCount) + " " + str(teamSamplePlayerCount))
-
-        teamSamplePlayerCount = teamSamplePlayerCount + 1
-    remainingPlayerCount = remainingPlayerCount + 1
-    
-    print(len(remainingPlayers))
-
-    # teams.append(teamSample)
+remainingPlayers = [player for player in remainingPlayers if player.id not in {p.id for p in teamSample1}] # FOR KIRK - list comprehension
 
 
+#finish selecting the teams
+teamSample2 = random.sample(remainingPlayers, init.teamSize) # choosing X random players
+teamSampleAvg = 0
+for samplePlayer in teamSample2:
+    teamSampleAvg = teamSampleAvg + samplePlayer.playerRating
+
+teamSampleAvg = teamSampleAvg/len(teamSample2)
+
+TeamsArray.append(init.Team(2, teamSample2, teamSampleAvg))
 
 
+# debugging
+for team in TeamsArray:
+    print(vars(team))
+    for player in team.players:
+        print("Team #"+ str(team.teamId) + ": " + str(vars(player)))
 
+# for players in teamSample1:
+#     print (vars(players))
 
-
-
-
-# print(teams[3][1].name)
-
-
-    # for members in teamSample:
-    #     teamSample[member]
-
-    # init.Team(teamSample,[])
-
-    #add team to array
-
-    
-
-# for i in range(0,4):
-#     print(str(i) + " " + team1[i].name)
+# print(len(teamSample1))
+# print(len(teamSample2))

@@ -14,18 +14,18 @@ print(cwd)
 # defining classes
 
 class Player:
-    def __init__(self, id, name, skill, height, playerRating, preferredPairing, forbiddenPairing):
+    def __init__(self, id, name, skill, height, playerRating, preferredPairing, forbiddenPairing, team):
         self.name = name
-        self.id = id
-        self.skill = skill
-        self.height = height
+        self.id = int(id)
+        self.skill = float(skill)
+        self.height = float(height)
         self.playerRating = skill * skillWeight + height * heightWeight
+        self.team = int(team)
     
-    def __lt__(self, other):
-        return self.id < other.id
 
 class Team:
-    def __init__(self, players, averageRating):
+    def __init__(self, teamId, players, averageRating):
+        self.teamId = int(teamId)
         self.players = players
         self.averageRating = averageRating
 
@@ -40,7 +40,7 @@ def extractPlayers():
 
         for row in delimitedReader:
             if count > 0:
-                players.append(Player(row[0],row[1],int(row[2]),int(row[3]),[],[],[]))
+                players.append(Player(row[0],row[1],int(row[2]),int(row[3]),[],[],[],0))
                 # print(players[count - 1].name)
                 # print(players[count - 1].playerRating)
 
