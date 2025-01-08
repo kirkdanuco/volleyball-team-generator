@@ -25,12 +25,13 @@ The closer teams are to the overall average the more "fair" the teams are
 
 
 # To Do
-* Turn into a function
-* create interative teams
-* Restrict forbidden pairings
+* ## Turn into a function
+* ## create interative teams
+Since we're brute forcing this bitch
 
-# For reference
-
+* ## Restrict forbidden pairings
+* ## Optimize randomizer
+For reference 
 https://pynative.com/python-weighted-random-choices-with-probability/
 
 https://pynative.com/python-weighted-random-choices-with-probability/
