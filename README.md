@@ -24,7 +24,13 @@ The closer teams are to the overall average the more "fair" the teams are
 
 
 
-FOR KIRK
+# To Do
+[] Turn into a function
+[] create interative teams
+[] testing branch
+[] Restrict forbidden pairings
+
+# For reference
 
 https://pynative.com/python-weighted-random-choices-with-probability/
 
