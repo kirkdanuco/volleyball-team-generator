@@ -30,19 +30,24 @@ teamSample = random.sample(players, init.teamSize) # choosing 4 random players
 remainingPlayers = init.extractPlayers()
 
 remainingPlayerCount = 0
-teamSamplePlayerCount = 0
+
 
 for remainingPlayer in remainingPlayers:
+    teamSamplePlayerCount = 0
     for teamSamplePlayer in teamSample:
         try:
-            print(remainingPlayers[remainingPlayerCount].name + " " + teamSample[teamSamplePlayerCount].name)
-            print(remainingPlayers[remainingPlayerCount].id == teamSample[teamSamplePlayerCount].id)
+            if remainingPlayers[remainingPlayerCount].id == teamSample[teamSamplePlayerCount].id:
+                print(remainingPlayers[remainingPlayerCount].name + " " + teamSample[teamSamplePlayerCount].name)
+                print(remainingPlayers[remainingPlayerCount].id == teamSample[teamSamplePlayerCount].id)
+
+                remainingPlayers.pop(remainingPlayerCount)
         except:
-            print("whoops" + str(remainingPlayerCount) + str(remainingPlayerCount))
+            print("whoops " + str(remainingPlayerCount) + " " + str(teamSamplePlayerCount))
 
         teamSamplePlayerCount = teamSamplePlayerCount + 1
-    
     remainingPlayerCount = remainingPlayerCount + 1
+    
+    print(len(remainingPlayers))
 
     # teams.append(teamSample)
 
