@@ -25,10 +25,10 @@ The closer teams are to the overall average the more "fair" the teams are
 
 
 # To Do
-[] Turn into a function
-[] create interative teams
-[] testing branch
-[] Restrict forbidden pairings
+[ ]Turn into a function
+[ ] create interative teams
+[ ] testing branch
+[ ] Restrict forbidden pairings
 
 # For reference
 
